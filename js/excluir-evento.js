@@ -16,7 +16,7 @@ fetch(`https://xp41-soundgarden-api.herokuapp.com/events`)
             itemBanner.value = item.poster;
             itemAtracoes.value = item.attractions;
             itemDescricao.value = item.description;
-            itemData.value = item.scheduled;
+            itemData.value = item.scheduled.slice(0,16);
             itemLotacao.value = item.number_tickets;
     }})})
     .catch(erro => console.log(erro));
@@ -48,7 +48,9 @@ btnEnviar.addEventListener("click", (evento) => {
             throw new Error(result.details.body[0].message);
         }
         alert('Excluído com sucesso!'); 
-        window.location.href = "admin.html";
+        setTimeout(function() {
+            window.location.href = "./admin.html";
+        }, 1000);
     })
     .catch(error => {
         alert('Algo saiu errado, tente novamente!');

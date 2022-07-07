@@ -40,6 +40,9 @@ form.addEventListener('submit', (event) => {
               throw new Error(result.details.body[0].message);
           }
             alert('Evento cadastrado com sucesso!'); //Mostra um alerta de sucesso
+            setTimeout(function() {
+                window.location.href = "./admin.html";
+            }, 1000);
         })
         .catch(error => {
             //Mostra um alerta informando erro e printa no console o erro
