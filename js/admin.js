@@ -38,7 +38,7 @@ fetch ("https://xp41-soundgarden-api.herokuapp.com/events")
             btnDel.setAttribute("href", `excluir-evento.html?id=${evento._id}`);
 
             const btn = document.createElement("td");
-            btn.append(btnDel, btnReservas, btnEditar);
+            btn.append(btnEditar,btnReservas,btnDel);
             linha.append(btn);
         })
     })
